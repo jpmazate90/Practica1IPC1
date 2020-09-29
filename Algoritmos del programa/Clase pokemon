@@ -1,0 +1,666 @@
+clase pokemon
+vector comida[100]
+vector 
+var pokemonEnemigo
+var nivelPokemon=0, vidaPokemon= 100(nivelPokemon+1)
+var experienciaPokemon
+var cantidadPokemonVivos
+var cantidadPokemonEnemigosDerrotados
+
+var nombrePokemon
+var imagenASCII(String)
+var estadoPokemon, estadoPokemonPelea
+var cantidadPokemonVivos, cantidadPokemonDerrotados
+var estadoPokemon
+var estadoPokemonPelea
+comidas[] historialcomidas = comidas[100];
+actividades[] historialactividades = actividades[100];
+var cuentaComidas; cuentaactividades;(int)
+var pokemonDerrotados
+var cantidadVeces huida, cantidadVecesDesmayado
+
+
+contructor(nombrePokemon,vidaPokemon, nivelPokemon,imagenASCII,estadoPokemon, estadoPokemonPelea)
+	nombrePokemon = tNombrePokemon
+	nivelPokemon = tNivelPokemon
+	vidaPokemon = tVidaPokemon
+	imagenASCII = tImagenASCII
+	estadoPokemon = tEstadoPokemon
+	estadoPokemonPelea= tEstadoPokemonPelea
+	cuentacomidas=0
+	cuentaactividades =0
+	cantidadPokemonVivos=0
+  cantidadPokemonEnemigosDerrotados=0
+  experienciaPokemon = 0
+  cantidadVecesDesmayado=0
+  cantidadVecesHuido=0
+fin constructor
+
+
+ metodo getNivelPokemon() 
+        devolver nivelPokemon;
+ fin metodo getNivelPokemon
+
+     setNivelPokemon( nivelPokemon) 
+        this.nivelPokemon = nivelPokemon;
+    fin metodo setNivelPokemon
+
+     getVidaPokemon() 
+        devolver vidaPokemon;
+    fin metodo getVidaPokemon
+
+     setVidaPokemon( vidaPokemon) 
+        this.vidaPokemon = vidaPokemon;
+    fin metodo setVidaPokemon
+
+     getExperienciaPokemon() 
+        devolver experienciaPokemon;
+    fin metodo getExperienciaPokemon
+
+     setExperienciaPokemon( experienciaPokemon) 
+        this.experienciaPokemon = experienciaPokemon;
+    fin metodo setExperienciaPokemon
+
+     getCantidadPokemonVivos() 
+        devolver cantidadPokemonVivos;
+    fin metodo getCantidadPokemonVivos
+
+     setCantidadPokemonVivos( cantidadPokemonVivos) 
+        this.cantidadPokemonVivos = cantidadPokemonVivos;
+    fin metodo setCantidadPokemonVivos
+
+     getCantidadPokemonEnemigosDerrotados() 
+        devolver cantidadPokemonEnemigosDerrotados;
+    fin metodo getCantidadPokemonEnemigosDerrotados
+
+     setCantidadPokemonEnemigosDerrotados( cantidadPokemonEnemigosDerrotados) 
+        this.cantidadPokemonEnemigosDerrotados = cantidadPokemonEnemigosDerrotados;
+    fin metodo setCantidadPokemonEnemigosDerrotados
+
+     getCuentaComidas() 
+        devolver cuentaComidas;
+    fin metodo getCuentaComidas
+
+     setCuentaComidas( cuentaComidas) 
+        this.cuentaComidas = cuentaComidas;
+    fin metodo setCuentaComidas
+
+     getCuentaActividades() 
+        devolver cuentaActividades;
+    fin metodo getCuentaActividades
+
+     setCuentaActividades( cuentaActividades) 
+        this.cuentaActividades = cuentaActividades;
+    fin metodo setCuentaActividades
+
+     getEstadoPokemon() 
+        devolver estadoPokemon;
+    fin metodo getEstadoPokemon
+
+     setEstadoPokemon( estadoPokemon) 
+        this.estadoPokemon = estadoPokemon;
+    fin metodo setEstadoPokemon
+    
+    
+
+     getEstadoPokemonPelea() 
+        devolver estadoPokemonPelea;
+    fin metodo getEstadoPokemonPelea
+
+     setEstadoPokemonPelea( estadoPokemonPelea) 
+        this.estadoPokemonPelea = estadoPokemonPelea;
+    fin metodo setEstadoPokemonPelea
+
+     getImagenASCCI() 
+        devolver imagenASCCI;
+    fin metodo getImagenASCCI
+
+     setImagenASCII( imagenASCCI) 
+        this.imagenASCCI = imagenASCCI;
+    fin metodo setImagenASCCI
+
+     getNombrePokemon() 
+        devolver nombrePokemon;
+    fin metodo getNombrePokemon
+
+     setNombrePokemon(String nombrePokemon) 
+        this.nombrePokemon = nombrePokemon;
+    fin metodo setNombrePokemon
+
+    Comida getHistorialComidas(Comida historialComidas) 
+        devolver historialComidas;
+    fin metodo gethistorialComidas
+
+     setHistorialComidas(Comida[] historialComidas) 
+        this.historialComidas = historialComidas;
+    fin metodo setHistorialComidas
+
+    Actividades[] getHistorialActividades() 
+        devolver historialActividades;
+    fin metodo getHistorialActividades
+
+     setHistorialactividades(Actividades[] historialActividades) 
+        this.historialActividades = historialActividades;
+        
+    fin metodo setHistorialActividades
+
+     getPokemonDerrotados() 
+        devolver pokemonDerrotados;
+    fin metodo getPokemonDerrotados
+
+     setPokemonDerrotados( pokemonDerrotados) 
+        this.pokemonDerrotados = pokemonDerrotados;
+    fin metodo setPokemonDerrotados
+
+     getCantidadVecesHuida() 
+        devolver cantidadVecesHuida;
+    fin metodo getCantidadVecesHuida
+
+     setCantidadVecesHuida( cantidadVecesHuida) 
+        this.cantidadVecesHuida = cantidadVecesHuida;
+    fin metodo setCantidadVeceshuida
+
+     getCantidadVecesDesmayado() 
+        devolver cantidadVecesDesmayado;
+    fin metodo getCantidadVecesDesmayado
+
+     setCantidadVecesDesmayado( cantidadVecesDesmayado) 
+        this.cantidadVecesDesmayado = cantidadVecesDesmayado;
+    fin metodo setCantidadVecesDesmayado
+   
+
+metodo int atacar(nombrePokemon, vidaPokemon, numPokemonActivo)
+	llamar al metodo estadoPokemonPelea
+	var numAleatorio1= numero aleatorio entre 0 y 20(nivelPokemon+1)
+	var daño = numAleatorio1
+	escribir(nombrePokemon	 + "ha atacado")
+	escribir(nombrePokemon+ "ha hecho un daño de "+daño)
+	devolver daño
+fin metodo atacar
+	
+metodo huir()
+	String huir="R"
+	estadoPokemonPelea= "huyo"
+	cantidadVecesHuida++
+	regresar huir;
+fin metodo huir
+
+
+metodo cambiarEstadoPokemonPelea(var tEstadoPokemonPelea)
+			estadoPokemonPelea= TEstadoPokemonPelea
+			regresar estadoPokemonPelea
+fin metodo cambiar estadoPokemonPelea()
+
+metodo recibirDaño( var tDaño)
+	vidaPokemon-= tDaño;
+	escribir(nombrePokemon+ " recibio un golpe de "+tDaño)
+	escribir("Ahora tiene de salud: "+vidaPokemon)
+	si(vidaPokemon<=100*0.25*(nivelPokemon+1)
+		escribir("El Pokemon se ha desmayado")
+		cantidadVecesDesmayado++
+		estadoPokemonPelea= "desmayado"
+		
+	fin si
+	si(vidaPokemon<=0)
+		escribir("El pokemon se ha muerto")
+		vidaPokemon=0
+		estadoPokemonPelea="desmayado"
+		estadoPokemon="muerto;
+	fin si
+
+			
+
+metodo comer(tNombreComida, tTipoComida, tSaludMasOMenos, tVidaPokemon)
+	si(tTipoComida==saludable)
+		escribir(nombrePokemon"esta a punto de comer "+tNombreComida+" esta comida es saludable")
+		escribir("nombrePokemon+" se curara "+tSaludMasOMenos+" puntos de salud")
+		si(vidaPokemon+saludMasOMenos>100*(nivel+1))
+			vidaPokemon= 100*(nivel+1)
+			escribir("La vida del pokemon se ha regenerado al maximo")
+		sino
+			vidaPokemon+=saludMasOMenos
+			escribir("la vida del pokemon ahora es: "+vidaPokemon) 	
+	
+
+	si (tipocomida==no saludable)
+		escribir("El pokemon esta a punto de comer "+nombreComida+" esta comida NO es saludable")
+			escribir("El pokemon perdera "+tSaludMasOMenos+ " puntos de salud")
+			si(vidaPokemon+tSaludMasOMenos<=100*0.25*(nivelPokemon+1)) y vidaPokemon+tSaludMasOMenos>0)
+				escribir("El pokemon se ha desmayado")
+				cantidadVecesDesmayado++
+				estadoPokemonPelea= desmayado
+			si(vidaPokemon+TSaludMasOMenos<=0)
+				escribir("El pokemon esta muerto, su salud es 0")
+				vidaPokemon=0
+				estadoPokemon=muerto
+				estadoPokemonPelea="desmayado"
+			fin si
+			llamar al metodo de guardarHistorialDeComidas (clase pokemon)
+fin metodo comer
+
+
+metodo actividad(tNombreActividad, tTipoActividad, tSaludMasOMenos)
+	si(tTipoActividad==saludable)
+		escribir("El pokemon esta a punto de realizar una actividad "+tNombreActividad+" esta actividad es "+tTipoActividad)
+		escribir(nombrePokemon+ " se curara "+tSaludMasOMenos+" puntos de salud")
+		si(vidaPokemon+tSaludMasOMenos>100*(nivelPokemon+1))
+			vidaPokemon= 100*(nivelPokemo+1)
+			escribir("La vida del pokemon se ha regenerado al maximo")
+		sino
+			vidaPokemon+=tSaludMasOMenos
+			escribir("la vida del pokemon ahora es: "+vidaPokemon) 
+		llamar al metodo de guardarHistorialDeActividades (clase Actividades)
+	si (tTipoActividad==no saludable)
+			escribir(nombrePokemon+ " esta a punto de realizar una actividad "+tNombreActividad+" esta actividad es"+tTipoActividad)
+			escribir(nombrePokemon+ " perdera "+tSaludMasOMenos+ " puntos de salud")
+			si(vidaPokemon+tSaludMasOMenos<=100*0.25*(nivelPokemo+1)) && vidaPokemon+tSaludMasOMenos>0)
+				escribir("El pokemon se ha desmayado")
+				estadoPokemon= desmayado
+			fin si
+			si(vidaPokemon+tSaludMasOMenos<=0)
+				escribir("El pokemon esta muerto, su salud es 0")
+				vidaPokemon=0
+				estadoPokemon=muerto
+				estadoPokemonPelea=desmayado
+		  fin si
+			llamar al metodo de guardarHistorialDeActividades (clase Actividades)
+fin metodo actividad
+
+
+metodo subirDeNivel()
+	var subirDeNivel
+	var tempVerificarNivel
+		subirDeNivel=experienciaPokemon%100
+		tempVerificarNivel=(experienciaPokemon-subirDeNivel)/100
+		si(tempVerificarNivel>nivelPokemon)
+			pokemon[i].nivelPokemon=tempVerificarNivel
+			escribir("El nivel de: "+nombrePokemon+" ahora es: "+nivelPokemon)
+		fin si
+  fin desde
+fin metodo subirDeNivel
+
+metodo recibirExperiencia(var experienciaRecibida)
+				experienciaPokemon+=experienciaRecibida;
+        escribir(nombrePokemon+" recibio experiencia: "+experienciaRecibida);
+        escribir("Ahora tiene "+experienciaPokemon+ " puntos de experiencia");
+        subirDeNivel();
+fin metodo recibirExperiencia
+
+
+metodo static escogerImagenASCII()
+var escogerImagenASCII
+var opcionImagenASCCI[6]   (String)
+escribir("Escoge que imagen ascci deseas pulsando el numero correspondiente")
+escribir("Opcion 1, pikachu")
+escribir("
+				\:.             .:/
+        \``._________.''/ 
+         \             / 
+ .--.--, / .':.   .':. \
+/__:  /  | '::' . '::' |
+   / /   |`.   ._.   .'|
+  / /    |.'         '.|
+ /___-_-,|.\  \   /  /.|
+      // |''\.;   ;,/ '|
+      `==|:=         =:|
+         `.          .'
+           :-._____.-:
+          `''       `'' ")
+escribir("Opcion 2, bulbasaur")
+escribir("   
+							`;,;.;,;.;.'
+              ..:;:;::;: 
+        ..--''' '' ' ' '''--.  
+      /' .   .'        '.   .`\
+     | /    /            \   '.|
+     | |   :             :    :|
+   .'| |   :             :    :|
+ ,: /\ \.._\ __..===..__/_../ /`.
+|'' |  :.|  `'          `'  |.'  ::.
+|   |  ''|    :'';          | ,  `''\
+|.:  \/  | /'-.`'   ':'.-'\ |  \,   |
+| '  /  /  | / |...   | \ |  |  |';'|
+ \ _ |:.|  |_\_|`.'   |_/_|  |.:| _ |
+/,.,.|' \__       . .      __/ '|.,.,\
+     | ':`.`----._____.---'.'   |
+      \   `:...-------'..' |   |
+       ',-,-',             .'-=,=,.")
+
+escribir("Opcion 3, charmander")
+escribir("
+              _.--..`-..
+            ,'          `.
+          ,'          __  `.
+         /|          . __   \
+        , |           / |.   .
+        |,'          !_.'|   |
+      ,'             '   |   |
+     /              |`--'|   |
+    |                `---'   |
+     .   ,                   |                       ,..
+      ._     '           _'  |                    , ' \ `
+  `.. `.`-...___,...---..    |       __,.        ,`.   L,|
+  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \
+-:..     `. `-..--_.,.<       `.      / `.        `-/ |   .
+  `,         ....'     `.              ,'         |   |  ',,
+    `.      '            '            /          '    |'. |/
+      `.   |              \       _,-'           |       ''
+        `._'               \   '.\                .      |
+           |                '     \                `._  ,'
+           |                 '     \                 .'|
+           |                 .      \                | |
+           |                 |       L              ,' |
+           `                 |       |             /   '
+            \                |       |           ,'   /
+          ,' \               |  _.._ ,-..___,..-'    ,'
+         /     .             .      `!             ,j'
+        /       `.          /        .           .'/
+       .          `.       /         |        _.'.'
+        `.          7`'---'          |------.'_.'
+       _,.`,_     _'                ,''-----.'
+   _,-_    '       `.     .'      ,\
+   -. /`.         _,'     | _  _  _.|
+    ..--'---.....'        `' '! |! /
+                            `. . -' 
+")
+escribir("Opcion 4, squirtle")
+escribir("
+					      _,........__
+            ,-'            .`-.
+          ,'                   `-.
+        ,'                        \
+      ,'                           .
+      .'\               ,...       `
+     ._.'|             / |  `       \
+     |   |            `-.'  ||       `.
+     |   |            '-._,'||       | \
+     .`.,'             `..,'.'       , |`-.
+     l                       .'`.  _/  |   `.
+     `-.._'-   ,          _ _'   -. \  .     `
+`......'-.`-...,---------','         `. `....__.
+.'        `.-..___      __,'\          \  \     \
+\_ .          |   `....'    `.           . \     \
+  `.          |              `.          |  .     L
+    `.        |`--...________.'.        j   |     |
+      `._    .'      |          `.     .|   ,     |
+         `--,\       .            `7..' |  ,      |
+            ` `      `            /     |  |      |    _,-'...`-.
+             \ `.     .          /      |  '      |  ,'          `.
+              \  v.__  .        '       .   \    /| /              \
+               \/    `..\.......`.       \   \  /.''                |
+                `        .        `._ ___,j.  `/ .-       ,---.     |
+                ,`-.      \         ..     `.  |/        j     `    |
+               /    `.     \       /         \ /         |     /    j
+              |       `-.   7-.._ .          |.          '         /
+              |          `./_    `|          |            .     _,'
+              `.           / `----|          |-............`---'
+                \          \      |          |
+               ,'           )     `.         |
+                7____,,..--'      /          |
+                                  `---.__,--.'")
+escribir("Opcion 5, catarperie")
+escribir("      
+								   _,........_
+               _.-'    ___    `-._
+            ,-'      ,'   \       `.
+ _,...    ,'      ,-'     |  ,...:`._.
+/     `--+.   _,.'      _.',',|.|  ` \`
+\_         `.'     _,-.'  | / `-'   l L\
+  `.---.._      ,-.       | l       | | |
+      /   `.   |          ' `.     ,' ; |
+     j     |   |           `._`...' ,'  |__
+     |      `--'____          `----'    .' `.
+     |    _,-...    `-.                 |    \
+     l   /             `.               F     l
+      `./     __..._     `.           ,'      |
+        |  ,-.      `.    | ._     _.'        |
+        . j           \   j   /`...      __   |          ,.`.
+         `|           | _,.__ |        ,'  `. |          |   |
+          `-._       /-'     `L       .     , '          |   |
+              F-...-'          `      |    , /           |   |
+              |            ,----.     `...' /            |   |
+              .--.        j      l        ,'             |   j
+             j    L       |      |'-...--<               .  /
+             `     |       . __,,_    ..  |               \/
+              `-..'.._  __,-'     \  |  |/`._           ,'`
+                  |   ..       .--`. `--,  ,-`..____..,'   |
+                   L          /     \ _.  |   | \  .-.\    j
+                  .'._        l     .\    `---' |  |  || ,'
+                   .  `..____,-.._.'  `._       |  `--;.I'
+                    `--.' `.            ,`-..._/__,.-1,'
+                            `-.__  __,.'     ,' ,' _-'
+                                 `'...___..`'--^--'
+	 ")
+leer(escogerImagenASCII)
+
+	
+  opcionImagenASCCI[1]=
+       \:.             .:/
+        \``._________.''/ 
+         \             / 
+ .--.--, / .':.   .':. \
+/__:  /  | '::' . '::' |
+   / /   |`.   ._.   .'|
+  / /    |.'         '.|
+ /___-_-,|.\  \   /  /.|
+      // |''\.;   ;,/ '|
+      `==|:=         =:|
+         `.          .'
+           :-._____.-:
+          `''       `'
+	opcionImagenASCCI[2]=
+							`;,;.;,;.;.'
+              ..:;:;::;: 
+        ..--''' '' ' ' '''--.  
+      /' .   .'        '.   .`\
+     | /    /            \   '.|
+     | |   :             :    :|
+   .'| |   :             :    :|
+ ,: /\ \.._\ __..===..__/_../ /`.
+|'' |  :.|  `'          `'  |.'  ::.
+|   |  ''|    :'';          | ,  `''\
+|.:  \/  | /'-.`'   ':'.-'\ |  \,   |
+| '  /  /  | / |...   | \ |  |  |';'|
+ \ _ |:.|  |_\_|`.'   |_/_|  |.:| _ |
+/,.,.|' \__       . .      __/ '|.,.,\
+     | ':`.`----._____.---'.'   |
+      \   `:"""-------'""' |   |
+       ',-,-',             .'-=,=,
+	opcionImagenASCCI[3]= 
+	            _.--""`-..
+            ,'          `.
+          ,'          __  `.
+         /|          " __   \
+        , |           / |.   .
+        |,'          !_.'|   |
+      ,'             '   |   |
+     /              |`--'|   |
+    |                `---'   |
+     .   ,                   |                       ,".
+      ._     '           _'  |                    , ' \ `
+  `.. `.`-...___,...---""    |       __,.        ,`"   L,|
+  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \
+-:..     `. `-..--_.,.<       `"      / `.        `-/ |   .
+  `,         """"'     `.              ,'         |   |  ',,
+    `.      '            '            /          '    |'. |/
+      `.   |              \       _,-'           |       ''
+        `._'               \   '"\                .      |
+           |                '     \                `._  ,'
+           |                 '     \                 .'|
+           |                 .      \                | |
+           |                 |       L              ,' |
+           `                 |       |             /   '
+            \                |       |           ,'   /
+          ,' \               |  _.._ ,-..___,..-'    ,'
+         /     .             .      `!             ,j'
+        /       `.          /        .           .'/
+       .          `.       /         |        _.'.'
+        `.          7`'---'          |------"'_.'
+       _,.`,_     _'                ,''-----"'
+   _,-_    '       `.     .'      ,\
+   -" /`.         _,'     | _  _  _.|
+    ""--'---"""""'        `' '! |! /
+                            `" " -' 
+	opcionImagenASCCI[4]=
+	 							_,........__
+	            ,-'            "`-.
+          ,'                   `-.
+        ,'                        \
+      ,'                           .
+      .'\               ,"".       `
+     ._.'|             / |  `       \
+     |   |            `-.'  ||       `.
+     |   |            '-._,'||       | \
+     .`.,'             `..,'.'       , |`-.
+     l                       .'`.  _/  |   `.
+     `-.._'-   ,          _ _'   -" \  .     `
+`."""""'-.`-...,---------','         `. `....__.
+.'        `"-..___      __,'\          \  \     \
+\_ .          |   `""""'    `.           . \     \
+  `.          |              `.          |  .     L
+    `.        |`--...________.'.        j   |     |
+      `._    .'      |          `.     .|   ,     |
+         `--,\       .            `7""' |  ,      |
+            ` `      `            /     |  |      |    _,-'"""`-.
+             \ `.     .          /      |  '      |  ,'          `.
+              \  v.__  .        '       .   \    /| /              \
+               \/    `""\"""""""`.       \   \  /.''                |
+                `        .        `._ ___,j.  `/ .-       ,---.     |
+                ,`-.      \         ."     `.  |/        j     `    |
+               /    `.     \       /         \ /         |     /    j
+              |       `-.   7-.._ .          |"          '         /
+              |          `./_    `|          |            .     _,'
+              `.           / `----|          |-............`---'
+                \          \      |          |
+               ,'           )     `.         |
+                7____,,..--'      /          |
+                                  `---.__,--.'
+	
+	ImagenAscci[5]=
+	                 _,........_
+               _.-'    ___    `-._
+            ,-'      ,'   \       `.
+ _,...    ,'      ,-'     |  ,...:`._.
+/     `--+.   _,.'      _.',',|.|  ` \`
+\_         `.'     _,-.'  | / `-'   l L\
+  `.---.._      ,-.       | l       | | |
+      /   `.   |          ' `.     ,' ; |
+     j     |   |           `._`...' ,'  |__
+     |      `--'____          `----'    .' `.
+     |    _,-...    `-.                 |    \
+     l   /             `.               F     l
+      `./     __..._     `.           ,'      |
+        |  ,-.      `.    | ._     _.'        |
+        . j           \   j   /`...      __   |          ,.`.
+         `|           | _,.__ |        ,'  `. |          |   |
+          `-._       /-'     `L       .     , '          |   |
+              F-...-'          `      |    , /           |   |
+              |            ,----.     `...' /            |   |
+              .--.        j      l        ,'             |   j
+             j    L       |      |'-...--<               .  /
+             `     |       . __,,_    ..  |               \/
+              `-..'.._  __,-'     \  |  |/`._           ,'`
+                  |   ..       .--`. `--,  ,-`..____..,'   |
+                   L          /     \ _.  |   | \  .-.\    j
+                  .'._        l     .\    `---' |  |  || ,'
+                   .  `..____,-.._.'  `._       |  `--;.I'
+                    `--.' `.            ,`-..._/__,.-1,'
+                            `-.__  __,.'     ,' ,' _-'
+                                 `'...___..`'--^--'
+	 
+	imagenASCCI=opcionImagenASCCI[escogerImagenASCCI]	
+
+	
+fin escogerImagenASCII
+
+metodo guardarHistorialComidas(tNombreComida, tTipoComida, tDarOQuitarSalud)
+	historialComidas[cuentaComidas].nombreComida= tNombreComida
+	historialComidas[cuentaComidas].tipoComida= tTipoComida
+	historialComidas[cuentaComidas].darOQuitarSalud = tDarOQuitarSalud
+	cuentaComidas++
+fin guardarHistorialComidas
+
+metodo mostrarHistorialComidasDescendentes()
+	si(historialComidas[0]==null)
+	finsi
+	sino
+		desde(i=0;i<=cuentaComidas;i++)
+		escribir("El pokemon :"+nombrePokemon+ " ha ingerido: "+nombreComida)
+		escribir("El tipo de comida es: "+tipoComida)
+		escribir("Puntos de salud dados o quitados, dependiendo del simbolo es: "+darOQuitarSalud)
+fin metodo mostarHistorialComidas
+
+metodo mostrarHistorialComidasAscendentes()
+	si(historialComidas[0]==null)
+	finsi
+	sino
+		desde(i=cuentaComidas;i>=0;i--)
+		escribir("El pokemon :"+nombrePokemon+ " ha ingerido: "+nombreComida)
+		escribir("El tipo de comida es: "+tipoComida)
+		escribir("Puntos de salud dados o quitados, dependiendo del simbolo es: "+darOQuitarSalud)
+fin metodo mostrarHistorialComidasAscendentes
+
+
+metodo guardarHistorialActividades( tDarOQuitarSalud, tTipoActividad, tNombreActividad)
+	historialActividades[cuentaActividades].nombreActividad= tNombreActividad
+	historialActividades[cuentaActividades].tipoActividad= tTipoActividad
+	historialActividades[cuentaActividades].tDarOQuitarSalud = darOQuitarSalud
+	cuentaActividades++
+fin guardarHistorialComidas
+
+metodo mostrarHistorialActividadesDescendentes
+	si(historialActividades[0]==null=
+	finsi
+	sino
+		desde(i=0; i<=cuentaActividades;i++)
+		escribir("El pokemon :"+nombrePokemon+ " ha hecho una actividad: "+nombreActividad)
+		escribir("El tipo de actividad es: "+tipoActividad)
+		escribir("Puntos de salud dados o quitados, dependiendo del simbolo es: "+darOQuitarSalud)
+fin mostrarHistorialActividadesDescendentes
+
+metodo mostrarHistorialActividadesAscendentes
+	si(historialActividades[0]==null)
+	finsi
+	sino
+		desde(i=cuentaActividades; i<=0.lenght;i--)
+		escribir("El pokemon :"+nombrePokemon+ " ha hecho una actividad: "+nombreActividad)
+		escribir("El tipo de actividad es: "+tipoActividad)
+		escribir("Puntos de salud dados o quitados, dependiendo del simbolo es: "+darOQuitarSalud)
+fin mostrarHistorialActividadesAscendentes
+
+metodo contarComidasBuenas
+	var cantidadComidaBuena=0
+	desde(var i=0;i<cuentaComdias;i++)
+		si(historialComidas[i].gettTipoComida==saludable)
+			cantidadComidaBuena++
+		finsi
+		devolver cantidadComidaBuena
+
+fin metodo contarComidasBuenas		
+
+metodo contarComidaMala	
+	var cantidadComidaMala=0
+	desde(var i=0;i<cuentaComidas;i++)
+		si(historialCOmidas[i].getTipoComida==no saludable)
+			cantidadComidaMala++
+		fin si
+	devolve cantidadComidaMala
+fin metodo contarComidamala
+
+metodo mostrarEstadisticasPokemon
+				escribir("Nombre: "+nombrePokemon);
+        escribir("Vida:" +vidaPokemon);
+        escribir("Experiencia:" +experienciaPokemon);
+        escribir("Nivel. "+nivelPokemon);
+        escribir("Pokemon Derrotados: "+pokemonDerrotados);
+        escribir("Veces que ha huido: "+cantidadVecesHuida);
+        escribir("Veces que se ha desmayado: "+cantidadVecesDesmayado);
+        escribir("Imagen:");
+        escribir(imagenASCCI);
+fin metodo mostrarEstadisticasPokemon
+		
+		
+		
+		
+		
+		

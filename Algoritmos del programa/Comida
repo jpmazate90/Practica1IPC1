@@ -1,0 +1,32 @@
+clase comida
+
+var nombreComida (String)
+var tipoComida (String)
+var saludMasOMenos (int)
+var cuentaComidas
+comida[] historialComidas = comida[100]
+
+
+constructor comida(String tNombreComida, String tTipoComidaT, int tDarOQuitarSalud) (protected)
+	nombreComida= tNombreComidaT
+	tipoComida= tTipoComida
+	saludMasOMenos= tDarOQuitarSalud
+fin constructor
+
+***************getters and setters*******
+
+metodo mostrarNombreComida (string)
+	regresa nombreComida
+fin metodo mostrarNombreComida
+
+metodo mostarSaludMasOMenos() (int)
+    return darOQuitarSalud
+fin darOQuitarSalud
+    
+    
+metodo mostrarTipoComida() (String)
+return tipoComida
+fin mostarTipoComida
+
+
+

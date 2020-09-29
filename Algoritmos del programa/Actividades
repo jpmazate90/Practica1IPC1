@@ -1,0 +1,31 @@
+clase actividades
+
+var nombreActividad
+var tipoActividad
+var darOQuitarSalud
+var cuentaActividades
+actividades[] historialActividades = actividades[100]
+
+constructor actividades (String nombreActividad, String tipoActividad, int darOQuitarSalud)
+	nombreActividad= nombreActividad
+	tipoActividad = tipoActividad
+	darOQuitarSalud = darOQuitarSalud
+finconstructor
+
+metodo mostarTipoActividad (int)
+	regresar tipoActividad
+fin metodo mostrarTipoActividad
+
+metodo mostarTipoNombreActividad (int)
+	regresar tipoActividad
+fin metodo mostrarTipoActividad
+
+metodo mostarDarOQuitarSalud() (int)
+    return darOQuitarSalud
+fin darOQuitarSalud
+    
+    
+metodo aplicarActividad()
+	
+fin metodo aplicarActividad
+

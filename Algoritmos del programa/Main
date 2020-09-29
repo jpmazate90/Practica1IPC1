@@ -1,0 +1,731 @@
+clase main
+constante NOMBRE_ENTRENADOR= "Entrenador Miguelito" (String)
+var opcionMenuPrincipal
+var cantidadPokemon=0
+pokemon[] pokemon = pokemon[5]
+Comidas[] comidas = nueva Comidas[6]
+Actividades[] actividades = nueva Actividades[6]
+var escogerPokemonActivo=0
+var historialBatallasTotales=0
+var historialBatallasGanadas=0
+var historialBatallasPerdidas=0
+var pokemonVivos = falso
+var PokemonMuertos= falso
+var pokemonParaLuchar= falso
+var claveTerminarBatalla= falso
+var ganasteLaBatalla=falso
+
+metodo main
+	constante = entrenador Miguelito
+	comidas[0] = nueva comida("ensalada", "saludable", 25)
+	comidas[1] = nueva comida("carne", "saludable", 50)
+	comidas[2] = nueva comida("fruta", "saludable", 100)
+	comidas[3] = nueva comida("pizza", "no saludable", -25)
+	comidas[4] = nueva comida("hamburguesa", "no saludable", -50)
+	comidas[5] = nueva comida("churros", "no saludable", -100)
+	
+	actividades[0] = nueva actividades[0]("caminar", "saludable", 25)
+	actividades[1] = nueva actividades[1]("correr", "saludable", 50)
+	actividades[2] = nueva actividades[2]("jugar", "saludable", 100)
+	actividades[3] = nueva actividades[3]("desvelarse", "no saludable", -25)
+	actividades[4] = nueva actividades[4]("saltar", "no saludable", -50)
+	actividades[5] = nueva actividades[5]("nadar", "no saludable", -100)
+	
+	
+
+	escribir("Bienvenido al PokeEsmeralda, "+NOMBRE_ENTRENADOR)
+	escribir("Aqui podras tener pokemon, cuidarlos, alimentarlos y pelear contra otros entrenadores pokemon")
+	crearPokemon()
+	mostarMenuPrincipal
+	mientras(opcionMenuPrincipal!=9)
+		segun(opcionMenuPrincipal)
+			caso 1: crearPokemon    	
+							mostrarMenuPrincipal		  
+							cortar
+							
+			caso 2: escogerPokemonActivo()
+							mostrarMenuPrincipal() 		
+							cortar
+							
+			caso 3: menuBatalla	()		
+							mostrarMenuPrincipal()						
+							cortar  
+							
+			caso 4: alimentacion()
+							mostrarMenuPrincipal()						
+							cortar 
+			caso 5: actividades()
+							mostrarMenuPrincipal()							
+							cortar 
+			caso 6: llamar metodo reportes()
+							mostrarMenuPrincipal()								
+							cortar
+			caso 7: leerCodigo() 
+							opcionesDePelea()
+							mostrarMenuPrincipal()
+							cortar
+		  caso 8: revivirOEliminarPokemon()
+		  				mostrarMenuPrincipal
+		  				cortar
+			
+		fin segun
+	fin mientras
+	
+	si(opcionMenuPrincipal=9)
+		escribir("Estas saliendo de PokeEsmeralda")
+		escribir("Gracias por jugar, "+NOMBRE_ENTRENADOR)
+fin clase main
+
+metodo mostrarMenuPrincipal()
+        escribir("MENU PRINCIPAL");
+        si(pokemon[escogerPokemonActivo]==null)
+            escribir("Pokemon Activo: no hay pokemon activo");
+        finsi
+        sino
+            si(pokemon[escogerPokemonActivo].getEstadoPokemonPelea()=="no activo")
+                pokemon[escogerPokemonActivo].setEstadoPokemonPelea("activo");
+            finsi
+            escribir("Pokemon Activo: "+pokemon[escogerPokemonActivo].getNombrePokemon());
+        finsino
+        escribir("Escoge a donde quieres ir ");
+        escribir("1.- Crear Pokemon\n2.- Escoger Pokemon Activo\n3.- Batalla\n4.- Alimentacion\n5.- Actividades\n6.- Reportes\n7.- Introducir Codigo De Batalla\n8.- Revivir o eliminar un pokemon\n9.- Salir");
+        leer(opcionMenuPrincipal);
+fin metodo mostrarMenuPrincipal
+		
+metodo crearPokemon()
+	var existeNombreigual=falso
+  var nombrePokemon
+  var nombreRepetido=0
+  si(f=5)
+   escribir("Ya no puedes tener mas pokemon, el limite es 5")
+  sino
+  	escribir("Dinos Cual es el nombre que le deseas poner")
+  	leer(nombrePokemon)
+  	
+  	desde(var t=0;t<=pokemon;t++)
+  		desde(int q=0;q<pokemon.length y pokemon[t].getNombrePokemon= nombrePokemon)
+  		nombreRepetido++
+  		fin desde
+  	fin desde
+  	
+  		si(nombrePokemon= pokemon[t].nombrePokemon y nombreRepetido>1]
+  			escribir("Ese nombre no se puede utilizar, esta puesto a otro pokemon, escoge otro")
+  			existeNombreigual=verdadero
+  			crearPokemon()
+  	  fin si
+  	fin desde
+  	si(existenombreIgual=falso)
+  	
+  	var escogerImagenASCCI
+  	desde(var k=0;k<pokemon.length;k++)
+  		si(pokemon[k]==null)
+  		escogerImagenASCCI= Pokemon.escogerImagenASCCI()
+  		llamar metodo escogerImagenASCII  (clasePokemon)
+  		Pokemon = nuevo pokemon[i](nombrePokemon,100,0, vivo, no activo")
+ 	  	cantidadPokemon++
+  		escribir("Creaste un pokemon llamado: "+pokemon[k].getNombrePokemon());
+                        escribir("Su vida es: "+pokemon[k].getVidaPokemon());
+                        escribir("Su nivel es: "+pokemon[k].getNivelPokemon());
+                        escribir("Su imagen es: ");
+                        escribir(pokemon[k].getImagenASCCI());
+                        escribir("");
+  	fin si
+fin metodo crearPokemon()
+
+metodo escogerPokemonActivo()
+	verificarSiHayPokemonVivos()
+	verificarSiHayPokemonParaLuchar()
+	si(pokemonVivos==verdadero y pokemonParaLuchar=verdadero)
+		escribir("escoge que pokemon quieres que te acompañe y este activo")
+		desde(i=0;i<=pokemon.length;i++)
+		si(pokemon[i].getEstadoPokemonPelea=huyo 0 pokemon[i].getEstadoPokemonPelea=desmayado
+			escribir(nombrePokemon[i]+ "estado: "estadoPokemon[i])
+		sino
+			escribir((i+1)+".-"+pokemon[i].nombrePokemon)
+		fin desde
+	leer(escogerPokemonActivo)
+	mientras(pokemon[escogerpokemonActivo]!=vivo o huyo o desmayo)
+		escribir("este pokemon no se puede utilizar)
+		desde(i=0;i<=pokemon.length;i++)
+		si(pokemon[i].getEstadoPokemonPelea=huyo 0 pokemon[i].getEstadoPokemonPelea=desmayado
+			escribir(nombrePokemon[i]+ "estado: "estadoPokemon[i])
+		sino
+			escribir((i+1)+".-"+pokemon[i].nombrePokemon)
+		fin desde
+		si(pokemon[escogerPokemonActivo]=vivo)
+			pokemon[escogerPokemonActivo].estadoPokemonPelea= "activo"
+			escribir("el pokemon activo es pokemon[escogerPokemonActivo].getNombrePokemon)
+			devolver escogerPokemonActivo
+	sino
+		escribir("no tienes pokemon")
+fin metodo escogerPokemonActivo
+ 
+metodo verificarPokemonActivo()
+	desde(var i=0; i<=pokemon.length;i++)
+		si(pokemon[i].estadoPokemonPelea= "activo")
+			escogerPokemonActivo=i
+		sino
+			llamar metodo escogerPokemonActivo
+		fin si
+	fin desde
+		
+fin metodo verificarPokemonActivo
+
+
+revivirOEliminarPokemon()
+       	var revivirOEliminar;
+        pokemonMuertos=falso;
+        verificarSiHayPokemonMuertos();
+        si(pokemonMuertos==verdadero)
+            
+            escribir("Escoge que pokemon deseas revivir o eliminar");
+            desde(int j=0;j<pokemon.length ;j++)
+                si(pokemon[j]==null)fin
+                sino
+                si((pokemon[j].getEstadoPokemon()!=muerto))
+                    escribir(j+ ".- el Pokemon en esta casilla esta vivo");
+                finsi
+                sino
+                    escribir(j+".- "+pokemon[j].getNombrePokemon()+ "  Estado: "+pokemon[j].getEstadoPokemon());
+                    
+                finsi
+                finsi
+            fin desde
+                leer(escogerPokemonActivo)
+                
+                escribir(pokemon[escogerPokemonActivo].getNombrePokemon());
+                escribir("¿Que deseas hacerle?\n1.-Revivirlo\n2.-Eliminarlo");
+                leer(revivirOEliminar)
+                segun(revivirOEliminar)
+                    case 1: actividades(); cortar;
+                    case 2: eliminarPokemon(); cortar;
+                fin
+        finsi
+        sino
+            escribir("No tienes pokemon muertos");
+            escribir("");
+        
+        fin si
+        
+    fin
+ 
+metodo eliminarPokemon()
+        pokemon[escogerPokemonActivo]=null;
+        cantidadPokemon--;
+fin metodo eliminarPokemon
+
+
+metodo actividades()
+	var opcionActividades
+	escribir("existen 3 actividades saludables")
+	desde(i=0;i<3;i++)
+		escribir((i+1)+".-"+actividades[i].nombreActividad)
+	fin desde
+	escribir("Y 3 actividades no saludables")
+		desde(i=3;i<6;i++)
+			escribir((i+1)+".-"+actividades[i].nombreActividad)
+		fin desde
+	escribir("escoge que actividad deseas realizar, con el numero correspondiente")
+	leer(opcionActividades)
+	pokemon[escogerPokemonActivo].actividad(mostarNombreActividad, mostrarTipoActividad, mostrarDarOQuitarSalud,
+					pokemon[escogerPokemonActivo].vidaPokemon)
+fin metodo actividades
+
+metodo alimentacion()
+	var opcionAlimentacion
+	si(pokemon[escogerPokemonActivo].getEstadoPokemon=muerto)
+		escribir("No puedes revivir un pokemon con una comida, solo con una actividad, ve al menu actividad")
+	fin si
+	sino
+		escribir("existen 3 alimentos saludables")
+		desde(i=0;i<3;i++)
+			escribir((i+1)+".-"+comida[i].nombreComida)
+		fin desde
+		escribir("Y 3 alimentos no saludables")
+			desde(i=3;i<6;i++)
+				escribir((i+1)+".-"+comida[i].nombreComida)
+			fin desde
+		escribir("escoge que alimento deseas comer, con el numero correspondiente")
+		leer(opcionActividades)
+		pokemon[escogerPokemonActivo].comer(mostarNombreComida, mostrarTipoComida, mostrarSaludMasOMenos,
+					pokemon[escogerPokemonActivo].vidaPokemon)
+	fin sino
+
+fin metodo alimetacion
+
+
+
+metodo menuBatalla()
+        verificarSiHayPokemonVivos();
+        verificarSiHayPokemonParaLuchar();
+        si(pokemonVivos==verdadero && pokemonParaLuchar== verdadero)
+            escribir("Estas en batalla");
+            escribir("El turno de quien ataca sera escogido aleatoriamente");
+            elegirTurno();
+        finsi
+        sino
+            escribir("No tienes pokemon para pelear");
+        
+fin metodo menuBatalla
+
+metodo elegirTurno()
+        var numAleatorio3= numero aleatorio entre 1 y 2
+        si(numAleatorio3==1)
+            opcionesDePelea();
+        finsi
+        else
+            escribir("INGRESE ESTE CODIGO EN EL SOFTWARE DEL RIVAL");
+            escribir(""+pokemon[escogerPokemonActivo].getNombrePokemon()+""+"|0");
+            leerCodigo();
+            opcionesDePelea();
+        finsino
+        
+fin metodo elegirTurno
+    
+    
+metodo verificarSiHayPokemonParaLuchar()
+        pokemonParaLuchar=falso;
+        desde(var i=0;i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                si(pokemon[i].getEstadoPokemonPelea()=activo o no activo)                     
+                        pokemonParaLuchar=verdadero;
+                 
+                
+                sino
+                    pokemonParaLuchar=falso;
+                finsino
+            finsino
+        fin dese 
+fin metodo verificarSiHayPokemonParaLuchar
+
+metodo verificarSiHayPokemonVivos()
+        pokemonVivos=falso;
+        desde(var i=0;i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            fin si
+            sino
+                si(pokemon[i].getEstadoPokemon()=vivo) )
+                    pokemonVivos=verdadero;
+                    devolver pokemonVivos;
+                finsi
+            finsino
+        findesde
+        devolver pokemonVivos;
+        
+metodo verificarSiHayPokemonVivos
+    
+metodo verificarSiHayPokemonMuertos()
+        pokemonMuertos=falso;
+        desde(var j=0;j<pokemon.length;j++)
+            si(pokemon[j]==null)
+            finsi
+            sino
+               si(pokemon[j].getEstadoPokemon()=muerto))
+                    pokemonMuertos=verdadero;
+                    devolver pokemonMuertos;
+                finsi   
+           	finsino
+        findesde
+        regresar pokemonMuertos;
+fin metodo verificarSiHayPokemonMuertos
+
+
+metodo opcionesDePelea()
+	var opcionesDePelea
+	var dañoHecho
+		llamar metodo verificarSiHayPokemonVivos()
+		mientras(pokemonVivos=verdadero y claveTerminarBatalla=falsa y pokemonParaLuchar=verdadera)
+			escribir("Es tu turno")
+			escribir("Elige la opcion que desees, pulsando el numero correspondiente")
+			escribir("1.-Atacar\n 2.-Huir")
+			leer(opcionesDePelea)
+			si(opcionesDePelea=1)
+				dañoHecho=pokemon[escogerPokemonActivo].atacar()
+				llamar a metodo generarCodigo(dañohecho)
+				leercodigo
+			sino
+				llamar metodo huir=pokemon[escogerPokemonActivo.huir
+				verificarSiHayPokemonVivos()
+				verificarSiHayPokemonParaLuchar()
+				si(pokemonVivos=verdadero y pokemonParaLuchar=verdadero)
+					escogerPokemonActivo()
+				finsi
+				sino
+					verificarQuienGanoLaBatalla()
+				finsino
+				verificarSiHayPokemonVivos()
+        verificarSiHayPokemonParaLuchar()
+		fin mientras
+		
+		si(claveTerminarBatalla=verdadera y ganasteLaBatalla=verdadera)
+				repartirExperiencia()
+		finsi
+		si(claverTerminarBatalla=verdadera y ganasteLabatalla=falsa)
+			escribir(Labatalla ha terminado)
+		fin si
+		si(pokemonVivos=falso y claveTerminarbatalla=falsa)
+			escribir("no se puede pelear")
+	 fin si
+		
+fin metodo opcionesDePelea
+
+metodo generarCodigo(var dañoHechoT)
+	  escribir("INGRESE ESTE CODIGO EN EL SOFTWARE DEL RIVAL")
+		escribir(pokemon[numeroPokemonActivo].nombrePokemon+"|"+dañoHechoT)
+fin metodo generar codigo
+
+metodo generarCodigo(String huirT)
+		escribir("El pokemon "+nombrePokemon+" ha huido")
+		escribir("INGRESE ESTE CODIGO EN EL SOFTWARE DEL RIVAL")
+		escribir(nombrePokemon+"|R")
+fin metodo generarCodigo
+
+metodo verificarQuienGanoLaBatalla()
+	ganasteLaBatalla=falso
+	var quienGanoLaBatalla (string)
+	escribir("¿Ganaste la Batalla?, [S]i [N]o")
+	leer(quienGanoLaBatalla)
+	si(quienGanoLaBatalla = "S" o quienGanoLaBatalla="s")
+		ganasteLaBatalla= verdadero
+		claveTerminarbatalla=verdadero
+		historialBatallasGanadas++
+	sino
+		ganasteLaBatalla= falso
+		claveTerminarbatalla=true
+		historialBatallasPerdidas++
+	fin si
+	historialBatallasTotales++
+	regresarPokemonASuEstadoPokemon()
+	devolverGanasteLaBatalla
+fin metodo verificarQuienGanoLaBatalla
+
+metodo regresarPokemonASuEstadoPokemon()
+        desde(int k=0;k<pokemon.length;k++)
+            si(pokemon[k]==null)
+                
+            sino
+                si(pokemon[k].getEstadoPokemonPelea()=huyo))
+                    pokemon[k].setEstadoPokemonPelea("no activo");
+                    pokemon[k].setEstadoPokemon("vivo");
+                finsi
+                si(pokemon[k].getEstadoPokemonPelea()= desmayado) (pokemon[k].getEstadoPokemon()!=muerto))
+                    pokemon[k].setEstadoPokemonPelea("no activo");
+                    pokemon[k].setEstadoPokemon("vivo");
+                finsi
+            fin sino
+            
+        desde
+fin metodo regresarPokemonASuEstadoPokemon()
+
+metodo leerCodigo()
+	var codigoDelRival
+	var	factorHechoEntero
+	var factorHechoCadena
+	var huida
+	escribir("Ingrese el codigo del rival")
+	leer(codigoDelRival)
+	segun (posicion de la "|")
+	desde (posicion 0 hasta posicion "|"-1)
+	leer(nombrePokemonEnemigo)
+  desde(posicion "|"+1 hasta el final)
+  leer(factorHecho)
+  si(factorHecho= entero)
+  	pokemon[numeropokemonActivo].recibirDaño
+  fin si
+  si(factorHecho= R)
+  	escribir("El pokemon rival huyo")
+  	pokemonDerrotados++
+  fin si
+  si(factorHecho=T)
+  	escribir("La batalla ha terminado")
+  	verificarQuienGanolabatalla
+  	claveTerminarBatalla=verdadera
+  fin si
+fin metodo leer codigo
+
+metodo repartirExperiencia(experienciaPokemon, estadoPokemon, nombrePokemon)
+	constante PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_VIVO_1 = 0.6
+	constante PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_MUERTO_1= 0.4
+	constante PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_VIVO_2 = 0.9
+	constante PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_MUERTO_2 = 0.1
+	var pokemonVivosEnBatalla=0, pokemonMuertosEnBatalla=0
+	var numAlmacenarExperiencia1, numAlmacenarExperiencia2, numAlmacenarExperiencia3, numAlmacenarExperiencia4
+	var saludPokemonEnemigoQuitada
+	desde(i=0;i<=pokemon;i++)
+		si(pokemon[i].getEstadoPokemon= "vivo")
+			pokemonVivosEnBatalla++
+		sino
+			pokemonMuertosEnBatalla++
+  fin desde
+	escribir("Ingrese la cantidad de vida que rebajo de los pokemon enemigos")
+	leer (saludPokemonEnemigoQuitada)
+	si(pokemonMuertosEnBatalla=0)
+		numAlmacenarExperiencia2= pokemon[i].getEstadoPokemon=vivo
+	fin si
+	si(pokemonVivosEnBatalla<=pokemonMuertosEnBatalla)
+		numAlmacenarExperiencia1 = PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_VIVO_1*saludPokemonEnemigoQuitada
+		numAlmacenarExperiencia2 =numAlmacenarExperiencia1/pokemonVivosEnBatalla
+		numAlmacenarExperiencia3 = PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_MUERTO_1*saludPokemonEnemigoQuitada
+		numAlmacenarExperiencia4 = numAlmacenarExperiencia3/pokemonMuertosEnBatalla
+		
+		desde(i=0;i=pokemon;i++)
+			si(pokemon[i].estadoPokemon="vivo")
+				pokemon[i].recibirExperiencia(numAlmacenarExperiencia2)
+			sino
+				pokemon[i].recibirExperiencia(numAlmacenarExperiencia4)	
+			fin si
+			llamar metodo subirDeNivel
+		fin desde
+								
+	sino
+		numAlmacenarExperiencia1 = PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_VIVO_2*saludPokemonEnemigoQuitada
+		numAlmacenarExperiencia2 = numAlmacenarExperiencia1/pokemonvivosEnBatalla
+		numAlmacenarExperiencia3 = PORCENTAJE_PARA_DISTRIBUIR_EXPERIENCIA_MUERTO_2*saludPokemonEnemigoQuitada
+		numAlmacenarExperiencia4 = numAlmacenarExperiencia3/pokemonMuertosEnBatalla
+		
+		desde(i=0;i=pokemon;i++)
+			si(pokemon[i].estadoPokemon="vivo")
+				pokemon[i].recibirExperiencia(numAlmacenarExperiencia2)
+			sino	
+		  	pokemon[i].recibirExperiencia(numAlmacenarExperiencia4)	
+		  fin si
+		llamar metodo subirDeNivel
+		fin desde
+		
+fin repartirExperiencia()
+
+metodo mostrarHistorialDeBatallas()
+  escribir("La cantidad de batallas realizadas es: "+historialBatallasTotales)
+  escribir("La cantidad de batallas ganadas es : "+historialBatallasGanadas)
+  escribir("La cantidad de batallas perdidas es : "+historialBatallasPerdidas)
+fin metodo mostarHistorialDeBatallas
+
+metodo reportes
+var reportes;
+        
+        escribir("Selecciona que reporte quieres ver");
+        escribir("1.-Reporte de estado de los pokemon\n2.-Reporte de alimentos 1\n3.-Reporte de alimentos 2\n4.-Reporte visual\n5.-Reporte de actividades\n6.-Reporte de mejor y peor alimento\n7.-Reporte de Batallas\n8.-Reporte de mejor y peor pokemon Guerrero\n9.-Salir");
+        leer(reportes)
+        mientras(reportes!=9)
+           segun(reportes)
+                case 1: reporteEstadoPokemon(); cortar;
+                case 2: reporteAlimentos1(); cortar;
+                case 3: reporteAlimentos2(); cortar;
+                case 4: reporteVisual(); cortar;
+                case 5: reporteActividades(); cortar;
+                case 6: reporteMejorPeorAlimento(); cortar;
+                case 7: reporteBatallas(); cortar;
+                case 8: reporteMejorPeorPokemonGuerrero(); cortar;
+            
+            escribir("¿Quieres ver algun otro reporte?");
+            escribir("1.-Reporte de estado de los pokemon\n2.-Reporte de alimentos 1\n3.-Reporte de alimentos 2\n4.-Reporte visual\n5.-Reporte de actividades\n6.-Reporte de mejor y peor alimento\n7.-Reporte de Batallas\n8.-Reporte de mejor y peor pokemon Guerrero\n9.-Salir");
+            leer(reportes)
+        
+        
+        si(reportes==9)
+            escribir("Estas saliendo del menu reportes");
+  fin metodo reportes
+  
+  metodo reporteEstadoPokemon() 
+        varverSiguientePokemon;
+        desde(var i=0;i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                escribir("Nombre: "+pokemon[i].getNombrePokemon());
+                escribir("Estado: "+pokemon[i].getEstadoPokemon());
+                escribir("Imagen ASCCI: "+pokemon[i].getImagenASCCI());
+                si(i+1<pokemon.length y pokemon[i+1]!=null)
+                    escribir("Quieres ver del siguiente pokemon, [S]i  [N]o");
+                    escribir(pokemon[i+1].getNombrePokemon());
+                    leer(verSiguientePokemon)
+                    si(verSiguientepokemon=n))
+                        break ;
+                    finsi
+                
+                finsi
+            
+            finsino
+        fin desde
+  fin metodo reporteEstadoPokemon
+  
+metodoreporteAlimentos1() 
+        var verSiguientePokemon;
+        desde(var i=0; i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                pokemon[i].mostrarHistorialComidasDescendentes();
+                si(i+1<pokemon.length && pokemon[i+1]!=null)
+                    escribir("Quieres ver del siguiente pokemon, [S]i  [N]o");
+                    escribir(pokemon[i+1].getNombrePokemon());
+                    leer(verSiguientePokemon)
+                    si("verSiguientePokemon=n)
+                        cortar
+                    finsi
+                    
+                finsi
+            finsino
+        findesde
+fin metodo reporteAlimentos1
+
+metodoreporteAlimentos2() 
+        var verSiguientePokemon;
+        desde(var i=pokemon; i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                pokemon[i].mostrarHistorialComidasAscendentes();
+                si(i+1<pokemon.length && pokemon[i+1]!=null)
+                    escribir("Quieres ver del siguiente pokemon, [S]i  [N]o");
+                    escribir(pokemon[i+1].getNombrePokemon());
+                    leer(verSiguientePokemon)
+                    si("verSiguientePokemon=n)
+                        cortar
+                    finsi
+                    
+                finsi
+            finsino
+        findesde
+fin metodo reporteAlimentos2
+
+metodo reporteVisual()
+	desde(i=0;i<=pokemon;i++)
+	escribir("la imagen del pokemon "+nombrePokemon[i]+" es")
+	escribir(imagenASCII)
+fin metodo reporteVisual
+
+
+metodo reporteactividades()
+        var verSiguientePokemon;
+        desde(var i=0;i<pokemon.length;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                pokemon[i].mostrarHistorialActividadesDescendentes();
+                si(i+1<pokemon.length && pokemon[i+1]!=null)
+                    escribir("Quieres ver del siguiente pokemon, [S]i  [N]o");
+                    escribir(pokemon[i+1].getNombrePokemon());
+                    leer(verSiguientePokemon)
+                    si(verSiguientePokemon=no)
+                        cortar
+                    finsi
+                finsi
+            finsino
+        findesde
+fin metodo reporte actividades
+
+metodoreporteMejorPeorAlimento()
+        var[] guardarComidasBuenasTemporal = var[5];
+        var[] guardarComidasMalasTemporal = var[5];
+        var ordenarMejorComida=pokemon[0].contarComidasBuenas();
+        var casillaMejorComida=0;
+        var ordenarPeorComida=pokemon[0].contarComidaMala();
+        var casillaPeorComida=0;
+        desde(var i=0;i<pokemon.length ;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                guardarComidasBuenasTemporal[i]=pokemon[i].contarComidasBuenas();
+                guardarComidasMalasTemporal[i]=pokemon[i].contarComidaMala();
+            finsino
+        findesde
+        
+        desde(var j=1;j<pokemon.length;j++)
+            si(ordenarMejorComida<guardarComidasBuenasTemporal[j])
+                ordenarMejorComida = guardarComidasBuenasTemporal[j];
+                casillaMejorComida=j;
+            finsi
+        findesde
+        
+        desde(var k=1;k<pokemon.length;k++)
+            si(ordenarPeorComida<guardarComidasMalasTemporal[k])
+                ordenarPeorComida=guardarComidasMalasTemporal[k];
+                casillaPeorComida=k;
+            finsi
+        findesde
+        
+        escribir("El pokemon que mas alimento saludable consumio es: "+pokemon[casillaMejorComida].getNombrePokemon());
+        pokemon[casillaMejorComida].mostrarHistorialComidasDescendentes();
+        escribir("El pokemon que mas alimentos no saludables consumio es: "+pokemon[casillaPeorComida].getNombrePokemon());
+        pokemon[casillaPeorComida].mostrarHistorialComidasDescendentes();
+fin metodo reporteMejorPeorAlimento
+
+metodo reporteBatallas() 
+        escribir("Aqui veras el reporte de todas las batallas realizadas");
+        escribir("Cantidad de batallas realizadas: "+historialBatallasTotales);
+        escribir("Cantidad de batallas ganadas: "+historialBatallasGanadas);
+        escribir("Cantidad de batalals perdidas: "+historialBatallasPerdidas);
+fin metodo reporteBatallas
+
+metodo reporteMejorPeorPokemonGuerrero()
+        var ordenarPokemonQueMasEnemigosHaDesmayado=pokemon[0].getPokemonDerrotados();
+        var casillaPokemonQueMasEnemigosHaDesmayado=0;
+        var ordenarPokemonQueMasSeHaDesmayado=pokemon[0].getCantidadVecesDesmayado();
+        var casillaPokemonQueMasSeHaDesmayado=0;
+        var ordenarPokemonQueMasHaHuido=pokemon[0].getCantidadVecesHuida();
+        var casillaPokemonQueMasHaHuido=0;
+        var[] guardarPokemonQueMasEnemigosHaDesmayado =  var[5];
+        var[] guardarPokemonQueMasSeHaDesmayado = var[5];
+        var[] guardarPokemonQueMasHaHuido =  var[5];
+        
+        desde(var i=0;i<pokemon.length ;i++)
+            si(pokemon[i]==null)
+            finsi
+            sino
+                guardarPokemonQueMasEnemigosHaDesmayado[i]=pokemon[i].getPokemonDerrotados();
+                guardarPokemonQueMasSeHaDesmayado[i]=pokemon[i].getCantidadVecesDesmayado();
+                guardarPokemonQueMasHaHuido[i]=pokemon[i].getCantidadVecesHuida();
+            finsino
+        findesde
+        
+        desde(var j=1;j<pokemon.length;j++)
+           si(ordenarPokemonQueMasEnemigosHaDesmayado<guardarPokemonQueMasEnemigosHaDesmayado[j])
+                ordenarPokemonQueMasEnemigosHaDesmayado = guardarPokemonQueMasEnemigosHaDesmayado[j];
+                casillaPokemonQueMasEnemigosHaDesmayado=j;
+            finsi
+        findesde
+        
+        desde(var k=1;k<pokemon.length;k++)
+            si(ordenarPokemonQueMasSeHaDesmayado<guardarPokemonQueMasSeHaDesmayado[k])
+                ordenarPokemonQueMasSeHaDesmayado=guardarPokemonQueMasSeHaDesmayado[k];
+                casillaPokemonQueMasSeHaDesmayado=k;
+            finsi
+        findesde
+        
+        desde(var f=1;f<pokemon.length;f++)
+            si(ordenarPokemonQueMasHaHuido<guardarPokemonQueMasHaHuido[f])
+                ordenarPokemonQueMasHaHuido=guardarPokemonQueMasHaHuido[f];
+                casillaPokemonQueMasHaHuido=f;
+            finsi
+        findesde
+        
+        escribir("El pokemon que mas pokemon ha derrotado es: "+pokemon[ casillaPokemonQueMasEnemigosHaDesmayado].getNombrePokemon());
+        pokemon[ casillaPokemonQueMasEnemigosHaDesmayado].mostrarEstadisticasPokemon();
+        escribir("");
+        
+        escribir("El pokemon que mas veces se ha desmayado es: "+pokemon[casillaPokemonQueMasEnemigosHaDesmayado].getNombrePokemon());
+        pokemon[casillaPokemonQueMasEnemigosHaDesmayado].mostrarEstadisticasPokemon();
+        escribir("");
+        
+        escribir("El pokemon que mas veces ha huido es: "+pokemon[casillaPokemonQueMasHaHuido].getNombrePokemon());
+        pokemon[casillaPokemonQueMasHaHuido].mostrarEstadisticasPokemon();
+                
+        
+fin reporteMejorPeorPokemonGuerrero
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
